@@ -1,5 +1,5 @@
 export interface ApiResponse {
-      Result: boolean;
-      Data : object;
-     Message : string;
+      result: boolean;
+      data : object;
+     message : string;
 }

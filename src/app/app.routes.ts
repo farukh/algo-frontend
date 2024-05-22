@@ -1,3 +1,12 @@
 import { Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
 
-export const routes: Routes = [];
+// Your routing file should look like this
+export const routes: Routes = [
+  // A route to the home page (component)
+  {
+    path: '',
+    component: HomeComponent,
+  },
+
+];
