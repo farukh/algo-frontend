@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { ApiService } from './api.service';
 import { Observable } from 'rxjs';
 import { ApiResponse } from '../interfaces/api-response';
+import { Product } from '../interfaces/product';
 
 
 @Injectable({
@@ -22,7 +23,7 @@ export class InventorymgtService {
   };
 
   // Adding a product via the API
-  addProduct = (url: string, body: any): Observable<any> => {
+  addProduct = (url: string, body: Product): Observable<any> => {
     return this.apiService.post(url, body, {});
   };
 
@@ -33,6 +34,8 @@ export class InventorymgtService {
 
   // Deleting a product via the API
   deleteProduct = (url: string): Observable<any> => {
-    return this.apiService.delete(url, {});
+    debugger;
+    console.log(url);
+    return this.apiService.delete(url,{});
   };
 }

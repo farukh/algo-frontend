@@ -26,7 +26,7 @@ export class ApiService {
   }
 
   // Used to make a DELETE request to the API
-  delete<T>(url: string, options: Options): Observable<T> {
-    return this.httpClient.delete<T>(url, options) as Observable<T>;
+  delete<T>(url: string ,options: Options): Observable<T> {
+    return this.httpClient.delete<T>(url,options) as Observable<T>;
   }
 }

@@ -1,5 +1,4 @@
-<div class="column gap-1 wrapper">
-  <!-- Product Thumbnail -->
+<div class="column gap-05 padding10 wrapper ">
 
   <!-- Product Name -->
   <h2 class="title">{{ product.productName}}</h2>
@@ -10,7 +9,15 @@
     <span class="price">{{ product.price}}</span>
   </div>
 
-
+  <div class="row gap-05">
+    <span class="price-label">Description:</span>
+    <span class="price">{{ product.productDetails| truncateDescription:100:"..."}}</span>
+  </div>
+<div class="row gap-05 full-center space-between" >
+  <button    pButton >Edit</button>
+  <button  pButton  (click)="confirmDelete()" #deleteButton>Delete</button>
+</div>
 
 </div>
 
+<p-confirmPopup></p-confirmPopup>

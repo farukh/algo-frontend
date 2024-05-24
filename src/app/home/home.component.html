@@ -1,8 +1,12 @@
   <!-- Products Section -->
-  <div class="row wrap gap-2 space-between">
+  <div class="row wrap mt-50 gap-2">
+
     <app-products
       *ngFor="let product of products"
       [product]="product"
-
+      (deleteProductEvent)="deleteProductdHandler($event)"
     ></app-products>
   </div>
+
+
+
