@@ -1,1 +1,34 @@
-<p>stock-purchase works!</p>
+
+<div style="display: flex; align-items: center;justify-content: center;height: 100vh;">
+
+  <form action="" method="" class="form-horizontal" (submit)="stockPurchaseNow()" >
+    <h2 class="title">{{ selectedProduct.productName}}</h2>
+
+<div>
+  <div>
+    SuplierName :
+  </div>
+  <input type="text" placeholder="Product Price" name="supplierName" [(ngModel)]="stockPurchase.supplierName">
+</div>
+<div>
+  <div>
+    Quantity:
+  </div>
+  <input type="text" placeholder="Product Price" name="quantity" [(ngModel)]="stockPurchase.quantity">
+</div>
+<div>
+  <div>
+    Invoice Amount:
+  </div>
+  <input type="text" placeholder="Product Price" name="invoiceAmount" [(ngModel)]="stockPurchase.invoiceAmount">
+</div>
+<div>
+  <div>
+    Invoice No:
+  </div>
+  <input type="text" placeholder="Product Price" name="invoiceNo" [(ngModel)]="stockPurchase.invoiceNo">
+</div>
+<button type="submit" class="btn btn-primary">Submit</button>
+
+  </form>
+</div>

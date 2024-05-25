@@ -13,8 +13,8 @@ import { Product } from '../interfaces/product';
 export class InventorymgtService {
   constructor(private apiService: ApiService) {}
 
-  // Getting products from the API
-  getProducts = (
+  // Getting products/stock from the API
+  getData = (
     url: string,
   ): Observable<ApiResponse> => {
     return this.apiService.get(url, {
@@ -22,14 +22,14 @@ export class InventorymgtService {
     });
   };
 
-  // Adding a product via the API
-  addProduct = (url: string, body: Product): Observable<any> => {
+  // Adding a product/stockPurchase etc. via the API
+  addData = (url: string, body: any): Observable<any> => {
     debugger;
     console.log(url,body);
     return this.apiService.post(url, body, {});
   };
 
-  // Editing a product via the API
+  // Editing a product/stockPurchase via the API
   editProduct = (url: string, body: any): Observable<any> => {
     return this.apiService.patch(url, body, {});
   };
@@ -40,4 +40,17 @@ export class InventorymgtService {
     console.log(url);
     return this.apiService.delete(url,{});
   };
+
+
+  /////////////////////////////////
+  // Stock
+  /////////////////////////////////
+   // Getting Stock from the API
+  //  getStock = (
+  //   url: string,
+  // ): Observable<ApiResponse> => {
+  //   return this.apiService.get(url, {
+  //     responseType: 'json',
+  //   });
+  // };
 }

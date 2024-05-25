@@ -1,12 +1,12 @@
-export interface StockPurchases {
+export interface StockPurchase {
           purchaseId : number;
          purchaseDate: Date;
 
           productId : number;
-
+          productName: string;
           quantity : number;
 
-        suplierName : string;
+          supplierName : string;
         invoiceAmount: number;
         invoiceNo : string;
 }

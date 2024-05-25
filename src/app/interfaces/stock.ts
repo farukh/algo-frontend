@@ -1,10 +1,8 @@
 export interface Stock {
-        stockId:number;
-         productId :number;
-
-         quantity:number;
-
-           createdDate: number;
-
-           lastModifiedDate: number;
+  stockId:number;
+  productId :number;
+  productName: string;
+  quantity:number;
+  createdDate: Date;
+  lastModifiedDate: Date;
 }

@@ -1,0 +1,40 @@
+  <!-- Stock Sale Section -->
+  <div class="container">
+    <div class="panel panel-default">
+
+        <div class="panel-body">
+  <div class="container p-5">
+    <table class="table-latitude">
+      <caption>Stock Sale</caption>      <thead>
+        <tr>
+          <th>saleId</th>
+          <th>invoiceNo</th>
+          <th>customerName</th>
+          <th>mobileNo</th>
+          <th>saleDate</th>
+          <th>productId</th>
+          <th>productName</th>
+           <th>quantity</th>
+          <th>totalAmount</th>
+
+
+        </tr>
+      </thead>
+      <tbody>
+       <tr *ngFor="let stockSale of stockSales">
+             <td>{{stockSale.saleId}}</td>
+             <td>{{stockSale.invoiceNo}}</td>
+             <td>{{stockSale.customerName}}</td>
+             <td>{{stockSale.mobileNo}}</td>
+             <td>{{stockSale.saleDate}}</td>
+             <td>{{stockSale.productId}}</td>
+             <td>{{stockSale.productName}}</td>
+             <td>{{stockSale.quantity}}</td>
+             <td>{{stockSale.totalAmount}}</td>
+  </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+</div>

@@ -8,6 +8,7 @@ export interface StockSale {
 
     saleDate: Date;
    productId: number;
+   productName:string;
    quantity: number
    totalAmount:number;
 

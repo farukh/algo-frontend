@@ -1,0 +1,42 @@
+  <!-- Stock Purchase Section -->
+  <div class="container">
+    <div class="panel panel-default">
+
+        <div class="panel-body">
+  <div class="container p-5">
+    <table class="table-latitude">
+      <caption>Stock Purchase</caption>
+      <thead>
+      <tr>
+        <th>PurchaseId</th>
+        <th>purchaseDate</th>
+        <th>productId</th>
+        <th>productName</th>
+        <th>quantity</th>
+        <th>suplierName</th>
+        <th>invoiceAmount</th>
+        <th>invoiceNo</th>
+
+      </tr>
+    </thead>
+    <tbody>
+     <tr *ngFor="let stockPurchase of stockPurchases">
+           <td>{{stockPurchase.purchaseId}}</td>
+           <td>{{stockPurchase.purchaseDate}}</td>
+           <td>{{stockPurchase.productId}}</td>
+           <td>{{stockPurchase.productName}}</td>
+           <td>{{stockPurchase.quantity}}</td>
+           <td>{{stockPurchase.supplierName}}</td>
+           <td>{{stockPurchase.invoiceAmount}}</td>
+           <td>{{stockPurchase.invoiceNo}}</td>
+
+
+
+       </tr>
+    </tbody>
+  </table>
+</div>
+        </div>
+        </div>
+  </div>
+

@@ -5,15 +5,15 @@ import { Product } from '../interfaces/product';
 import { InventorymgtService } from '../services/inventorymgt.service';
 import { ApiResponse } from '../interfaces/api-response';
 import { ToastrService } from 'ngx-toastr';
-import { EditProductComponent } from '../components/edit-product/edit-product.component';
 import { NavigationExtras, Router } from '@angular/router';
+import { StockPurchaseComponent } from '../components/stock-purchase/stock-purchase.component';
 
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ProductsComponent, CommonModule
+  imports: [ProductsComponent, CommonModule,StockPurchaseComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
@@ -35,7 +35,7 @@ export class HomeComponent {
   }
   fetchProducts() {
     this.inventorymgtService
-      .getProducts('https://localhost:7270/api/StockInventory/GetAllProducts')
+      .getData('https://localhost:7270/api/StockInventory/GetAllProducts')
       .subscribe({
         next: (data: ApiResponse) => {
           this.products = data.data as Product[];
@@ -77,10 +77,6 @@ export class HomeComponent {
 
   }
   editProductdHandler(product: Product){
-
-
-// const myObject = product;
-
 const navigationExtras: NavigationExtras = {
   state: {
     data: product
@@ -89,31 +85,16 @@ const navigationExtras: NavigationExtras = {
 console.log(navigationExtras,'editProductdHandler');
 this.router.navigate(['/edit-product'], navigationExtras);
 
-// this.selectedProduct = product;
-//      // Edit the product
-//     this.inventorymgtService
-//     .editProduct(`https://localhost:7270/api/StockInventory/EditProduct`,this.selectedProduct)
-//     .subscribe({
-//       next: (data: ApiResponse) => {
-//         console.log(data.result,data.message);
-//         if(data.result){
-//           console.log(data.result,data.message);
-//           this.toastr.success('Edited', 'Product Edited Successfully');
-
-//          // if successfully deleted then refresh/fetch products again
-//         this.fetchProducts();
-//         }
-//         else{
-//           this.toastr.error(data.message,'Deletion Stopped...');
-
-//           console.log(data.result,data.message);
-//         }
-//         },
-//       error: (error) => {
-//         console.log(error);
-//       },
-//     });
-
   }
 
+  stockPurchasedHandler(product: Product)
+  {
+      console.log(product);
+      const navigationExtras: NavigationExtras = {
+        state: {
+          data: product
+        }
+      };
+       this.router.navigate(['/stock-purchase'], navigationExtras);
+    }
 }

@@ -1,1 +1,33 @@
-<p>stock works!</p>
+<div class="column gap-05 padding10 wrapper ">
+
+  <!-- Product Name -->
+  <h2 class="title">{{ stock.productName}}</h2>
+  <div class="row gap-05">
+    <span class="price-label">Stock ID:</span>
+    <span class="price">{{ stock.stockId}}</span>
+  </div>
+
+   <div class="row gap-05">
+    <span class="price-label">Product ID:</span>
+    <span class="price">{{ stock.productId}}</span>
+  </div>
+
+  <div class="row gap-05">
+    <span class="price-label">Quantity:</span>
+    <span class="price">{{ stock.quantity}}</span>
+  </div>
+  <div class="row gap-05">
+    <span class="price-label">Created Date:</span>
+    <span class="price">{{ stock.createdDate }}</span>
+  </div>
+  <div class="row gap-05">
+    <span class="price-label">Stock Last Update Date:</span>
+    <span class="price">{{ stock.lastModifiedDate}}</span>
+  </div>
+  <!-- <div class="row gap-05 full-center space-between" >
+    <button    (click)="stockSale()" >Stock Sale</button>
+    <button    (click)="stockPurchase()" >Stock Purchase</button>
+  </div> -->
+
+</div>
+
