@@ -7,20 +7,22 @@ import { ApiResponse } from '../interfaces/api-response';
 import { ToastrService } from 'ngx-toastr';
 import { NavigationExtras, Router } from '@angular/router';
 import { StockPurchaseComponent } from '../components/stock-purchase/stock-purchase.component';
+import { StockSaleComponent } from '../components/stock-sale/stock-sale.component';
 
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ProductsComponent, CommonModule,StockPurchaseComponent
+  imports: [ProductsComponent, CommonModule,StockPurchaseComponent, StockSaleComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
   products: Product[] = [];
-  constructor(private inventorymgtService: InventorymgtService,private toastr: ToastrService,private router:Router) {}
+  constructor(private inventorymgtService: InventorymgtService,
+    private toastr: ToastrService,private router:Router) {}
 
   selectedProduct: Product ={
     productId: 0,
@@ -96,5 +98,15 @@ this.router.navigate(['/edit-product'], navigationExtras);
         }
       };
        this.router.navigate(['/stock-purchase'], navigationExtras);
+    }
+    stockSaleHandler(product: Product)
+  {
+      console.log(product);
+      const navigationExtras: NavigationExtras = {
+        state: {
+          data: product
+        }
+      };
+       this.router.navigate(['/stock-sale'], navigationExtras);
     }
 }

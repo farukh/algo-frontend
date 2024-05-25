@@ -1,1 +1,41 @@
-<p>stock-sale works!</p>
+
+<div style="display: flex; align-items: center;justify-content: center;height: 100vh;">
+
+  <form action="" method="" class="form-horizontal" (submit)="stockSaleNow()" >
+    <h2 class="title">{{ selectedProduct.productName}}</h2>
+
+<div>
+  <div>
+    Customer Name :
+  </div>
+  <input type="text" placeholder="CustomerName" name="customerName" [(ngModel)]="stockSale.customerName">
+</div>
+<div>
+  <div>
+     Mobile No :
+  </div>
+  <input type="text" placeholder="mobileNo" name="mobileNo" [(ngModel)]="stockSale.mobileNo">
+</div>
+<div>
+  <div>
+    Quantity:
+  </div>
+  <input type="text" placeholder="Product Price" name="quantity" [(ngModel)]="stockSale.quantity">
+</div>
+<div>
+  <div>
+    Invoice No:
+  </div>
+  <input type="text" placeholder="Product Price" name="invoiceNo" [(ngModel)]="stockSale.invoiceNo">
+</div>
+<div>
+  <div>
+     Total Amount:
+  </div>
+  <input type="text" placeholder="Total Amount" name="totalAmount" [(ngModel)]="stockSale.totalAmount">
+</div>
+
+<button type="submit" class="btn btn-primary">Submit</button>
+
+  </form>
+</div>

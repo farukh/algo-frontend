@@ -69,7 +69,7 @@ constructor(private router: Router,private toastr : ToastrService,private invent
        console.log(data.result,data.message);
        if(data.result){
          console.log(data.result,data.message);
-         this.toastr.success('Stock Purchase Saved Successfully, Navigating to Stock Page','Added...' );
+         this.toastr.success('Stock Purchase Saved Successfully, Navigating to Stock Purchase Page','Added...' );
         this.router.navigate(['/stock-list'])
        }
        else{

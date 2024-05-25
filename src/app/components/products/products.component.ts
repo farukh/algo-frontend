@@ -28,7 +28,9 @@ export class ProductsComponent {
  @Input() product!: Product;
  @Output() deleteProductEvent: EventEmitter<Product> = new EventEmitter;
  @Output() editProductEvent: EventEmitter<Product> = new EventEmitter;
- @Output() stockPurcaseEvent: EventEmitter<Product> = new EventEmitter;
+ @Output() stockPurchaseEvent: EventEmitter<Product> = new EventEmitter;
+ @Output() stockSaleEvent: EventEmitter<Product> = new EventEmitter;
+
 
 
  constructor(private confirmationService: ConfirmationService)
@@ -60,12 +62,12 @@ this.confirmationService.confirm(
 
   stockPurchase()
   {
-    this.stockPurcaseEvent.emit(this.product as Product);
+    this.stockPurchaseEvent.emit(this.product as Product);
 
   }
 
   stockSale()
   {
-    console.log(this.product);
+    this.stockSaleEvent.emit(this.product as Product);
   }
 }
