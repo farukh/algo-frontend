@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import { ProductsComponent } from '../components/products/products.component';
+import { ProductsComponent } from '../../components/products/products.component';
 import { CommonModule } from '@angular/common';
-import { Product } from '../interfaces/product';
-import { InventorymgtService } from '../services/inventorymgt.service';
-import { ApiResponse } from '../interfaces/api-response';
+import { Product } from '../../interfaces/product';
+import { InventorymgtService } from '../../services/inventorymgt.service';
+import { ApiResponse } from '../../interfaces/api-response';
 import { ToastrService } from 'ngx-toastr';
 import { NavigationExtras, Router } from '@angular/router';
-import { StockPurchaseComponent } from '../components/stock-purchase/stock-purchase.component';
-import { StockSaleComponent } from '../components/stock-sale/stock-sale.component';
+import { StockPurchaseComponent } from '../../components/stock-purchase/stock-purchase.component';
+import { StockSaleComponent } from '../../components/stock-sale/stock-sale.component';
 
 
 
