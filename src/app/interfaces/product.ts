@@ -1,7 +1,7 @@
 export interface Product {
     productId?: number;
     productName: string;
-    price: string;
-    createdDate?: Date;
+    price: number;
+    createdDate: Date;
     productDetails: string;
  }

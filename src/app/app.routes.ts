@@ -4,6 +4,7 @@ import { StockComponent } from './components/stock/stock.component';
 import { StockPurchaseComponent } from './components/stock-purchase/stock-purchase.component';
 import { StockSaleComponent } from './components/stock-sale/stock-sale.component';
 import { AddProductComponent } from './components/add-product/add-product.component';
+import { EditProductComponent } from './components/edit-product/edit-product.component';
 
 // Your routing file should look like this
 export const routes: Routes = [
@@ -30,6 +31,10 @@ export const routes: Routes = [
   {
     path: 'add-product',
     component: AddProductComponent,
+  },
+  {
+    path: 'edit-product',
+    component: EditProductComponent,
   },
 
 

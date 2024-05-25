@@ -5,8 +5,11 @@
       *ngFor="let product of products"
       [product]="product"
       (deleteProductEvent)="deleteProductdHandler($event)"
+      (editProductEvent) = "editProductdHandler($event)"
+
     ></app-products>
   </div>
 
+  <!-- " -->
 
 

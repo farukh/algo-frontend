@@ -27,7 +27,9 @@ export class ProductsComponent {
  @ViewChild('deleteButton') deleteButton: any;
  @Input() product!: Product;
  @Output() deleteProductEvent: EventEmitter<Product> = new EventEmitter;
-constructor(private confirmationService: ConfirmationService)
+ @Output() editProductEvent: EventEmitter<Product> = new EventEmitter;
+
+ constructor(private confirmationService: ConfirmationService)
 {}
   ngOnInit() {}
 
@@ -45,6 +47,12 @@ this.confirmationService.confirm(
   onDelete()
   {
     console.log(this.product);
-    this.deleteProductEvent.emit(this.product);
+    this.deleteProductEvent.emit(this.product as Product);
+  }
+
+  editProduct()
+  {
+    console.log(this.product);
+    this.editProductEvent.emit(this.product as Product);
   }
 }

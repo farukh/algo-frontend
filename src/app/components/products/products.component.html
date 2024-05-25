@@ -14,7 +14,7 @@
     <span class="price">{{ product.productDetails| truncateDescription:100:"..."}}</span>
   </div>
 <div class="row gap-05 full-center space-between" >
-  <button    pButton >Edit</button>
+  <button    (click)="editProduct()" >Edit</button>
   <button  pButton  (click)="confirmDelete()" #deleteButton>Delete</button>
 </div>
 

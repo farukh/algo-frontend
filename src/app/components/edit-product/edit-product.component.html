@@ -1,5 +1,5 @@
 <div style="display: flex; align-items: center;justify-content: center;height: 100vh;">
-  <form action="" method="" class="form-horizontal" (submit)="addProduct()">
+  <form action="" method="" class="form-horizontal" (submit)="editProduct()" >
     <div>
       <div>
         Product Name:
@@ -11,13 +11,13 @@
       <div>
         Product Price:
       </div>
-      <input type="text" placeholder="Product Name" name="productName" [(ngModel)]="product.price">
+      <input type="text" placeholder="Product Price" name="productPrice" [(ngModel)]="product.price">
     </div>
     <div>
       <div>
         Product Details:
       </div>
-      <input type="text" placeholder="Product Name" name="productName" [(ngModel)]="product.productDetails">
+      <textarea type="textarea" rows="4" cols="50" placeholder="Product Name" name="productDetails" [(ngModel)]="product.productDetails"></textarea>
     </div>
 <button type="submit" class="btn btn-primary">Submit</button>
   </form>

@@ -22,7 +22,7 @@ export class ApiService {
 
   // Used to make a PUT request to the API
   patch<T>(url: string, body: Product, options: Options): Observable<T> {
-    return this.httpClient.put<T>(url, body, options) as Observable<T>;
+    return this.httpClient.patch<T>(url, body, options) as Observable<T>;
   }
 
   // Used to make a DELETE request to the API

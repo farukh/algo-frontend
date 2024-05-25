@@ -5,6 +5,8 @@ import { Product } from '../interfaces/product';
 import { InventorymgtService } from '../services/inventorymgt.service';
 import { ApiResponse } from '../interfaces/api-response';
 import { ToastrService } from 'ngx-toastr';
+import { EditProductComponent } from '../components/edit-product/edit-product.component';
+import { NavigationExtras, Router } from '@angular/router';
 
 
 
@@ -18,13 +20,13 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class HomeComponent {
   products: Product[] = [];
-  constructor(private inventorymgtService: InventorymgtService,private toastr: ToastrService) {}
+  constructor(private inventorymgtService: InventorymgtService,private toastr: ToastrService,private router:Router) {}
 
   selectedProduct: Product ={
     productId: 0,
     productName: "",
-    price: "",
-    createdDate: new Date("2024/05/01"),
+    price: 0,
+    createdDate: new Date(),
     productDetails: ''
  }
 
@@ -49,8 +51,7 @@ export class HomeComponent {
   deleteProductdHandler(product: Product){
 
     this.selectedProduct = product;
-debugger;
-    // Delete the product
+     // Delete the product
     this.inventorymgtService
     .deleteProduct(`https://localhost:7270/api/StockInventory/DeleteProduct?id=${this.selectedProduct.productId}`)
     .subscribe({
@@ -75,6 +76,44 @@ debugger;
     });
 
   }
+  editProductdHandler(product: Product){
 
+
+// const myObject = product;
+
+const navigationExtras: NavigationExtras = {
+  state: {
+    data: product
+  }
+};
+console.log(navigationExtras,'editProductdHandler');
+this.router.navigate(['/edit-product'], navigationExtras);
+
+// this.selectedProduct = product;
+//      // Edit the product
+//     this.inventorymgtService
+//     .editProduct(`https://localhost:7270/api/StockInventory/EditProduct`,this.selectedProduct)
+//     .subscribe({
+//       next: (data: ApiResponse) => {
+//         console.log(data.result,data.message);
+//         if(data.result){
+//           console.log(data.result,data.message);
+//           this.toastr.success('Edited', 'Product Edited Successfully');
+
+//          // if successfully deleted then refresh/fetch products again
+//         this.fetchProducts();
+//         }
+//         else{
+//           this.toastr.error(data.message,'Deletion Stopped...');
+
+//           console.log(data.result,data.message);
+//         }
+//         },
+//       error: (error) => {
+//         console.log(error);
+//       },
+//     });
+
+  }
 
 }

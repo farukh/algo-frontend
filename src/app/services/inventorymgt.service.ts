@@ -24,6 +24,8 @@ export class InventorymgtService {
 
   // Adding a product via the API
   addProduct = (url: string, body: Product): Observable<any> => {
+    debugger;
+    console.log(url,body);
     return this.apiService.post(url, body, {});
   };
 
