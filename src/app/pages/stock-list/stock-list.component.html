@@ -1,9 +1,34 @@
-  <!-- Stock Section -->
-  <div class="row wrap mt-50 gap-2">
 
-    <app-stock
-      *ngFor="let stock of stocks"
-      [stock]="stock"
 
-    ></app-stock>
+    <!-- Stock List Section -->
+    <div class="container">
+      <div class="panel panel-default">
+
+          <div class="panel-body">
+    <div class="container p-5">
+      <table class="table-latitude">
+        <caption>Stock List</caption>      <thead>
+          <tr>
+            <th>Stock Id</th>
+            <th>productId</th>
+            <th>productName</th>
+            <th>quantity</th>
+            <th>createdDate</th>
+            <th>lastModifiedDate</th>
+          </tr>
+        </thead>
+        <tbody>
+         <tr *ngFor="let stock of stocks">
+               <td>{{stock.stockId}}</td>
+               <td>{{stock.productId}}</td>
+               <td>{{stock.productName}}</td>
+               <td>{{stock.quantity}}</td>
+               <td>{{stock.createdDate}}</td>
+               <td>{{stock.lastModifiedDate}}</td>
+    </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  </div>
   </div>
