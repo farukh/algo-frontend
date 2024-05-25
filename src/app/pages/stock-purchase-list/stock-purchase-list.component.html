@@ -22,7 +22,7 @@
     <tbody>
      <tr *ngFor="let stockPurchase of stockPurchases">
            <td>{{stockPurchase.purchaseId}}</td>
-           <td>{{stockPurchase.purchaseDate}}</td>
+           <td>{{stockPurchase.purchaseDate| date: 'dd/MM/yyyy'}}</td>
            <td>{{stockPurchase.productId}}</td>
            <td>{{stockPurchase.productName}}</td>
            <td>{{stockPurchase.quantity}}</td>

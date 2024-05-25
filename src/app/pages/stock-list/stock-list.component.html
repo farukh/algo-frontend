@@ -23,8 +23,8 @@
                <td>{{stock.productId}}</td>
                <td>{{stock.productName}}</td>
                <td>{{stock.quantity}}</td>
-               <td>{{stock.createdDate}}</td>
-               <td>{{stock.lastModifiedDate}}</td>
+               <td>{{stock.createdDate| date: 'dd/MM/yyyy'}}</td>
+               <td>{{stock.lastModifiedDate| date: 'dd/MM/yyyy'}}</td>
     </tr>
         </tbody>
       </table>
