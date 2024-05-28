@@ -38,7 +38,7 @@ export class AddProductComponent {
   }
       // Add the product
    this.inventorymgtService
-  .addData(`https://localhost:7270/api/StockInventory/CreateNewProduct`,this.product ).subscribe({
+  .addData(`/api/StockInventory/CreateNewProduct`,this.product ).subscribe({
    next: (data: ApiResponse) => {
      console.log(data.result,data.message);
      if(data.result){

@@ -38,7 +38,7 @@ editProduct()
   }
       // Add the product
    this.inventorymgtService
-  .editProduct(`https://localhost:7270/api/StockInventory/EditProduct`,this.product ).subscribe({
+  .editProduct(`/api/StockInventory/EditProduct`,this.product ).subscribe({
    next: (data: ApiResponse) => {
      console.log(data.result,data.message);
      if(data.result){

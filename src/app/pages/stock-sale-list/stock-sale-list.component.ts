@@ -24,7 +24,7 @@ export class StockSaleListComponent {
   }
   fetchStocks() {
     this.inventorymgtService
-      .getData('https://localhost:7270/api/StockInventory/GetAllSale')
+      .getData('/api/StockInventory/GetAllSale')
       .subscribe({
         next: (data: ApiResponse) => {
           this.stockSales = data.data as StockSale[];

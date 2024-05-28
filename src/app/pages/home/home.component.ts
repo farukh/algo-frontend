@@ -37,7 +37,7 @@ export class HomeComponent {
   }
   fetchProducts() {
     this.inventorymgtService
-      .getData('https://localhost:7270/api/StockInventory/GetAllProducts')
+      .getData('/api/StockInventory/GetAllProducts')
       .subscribe({
         next: (data: ApiResponse) => {
           this.products = data.data as Product[];
@@ -55,7 +55,7 @@ export class HomeComponent {
     this.selectedProduct = product;
      // Delete the product
     this.inventorymgtService
-    .deleteProduct(`https://localhost:7270/api/StockInventory/DeleteProduct?id=${this.selectedProduct.productId}`)
+    .deleteProduct(`/api/StockInventory/DeleteProduct?id=${this.selectedProduct.productId}`)
     .subscribe({
       next: (data: ApiResponse) => {
         console.log(data.result,data.message);

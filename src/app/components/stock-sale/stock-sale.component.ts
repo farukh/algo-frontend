@@ -66,7 +66,7 @@ constructor(private router: Router,private toastr : ToastrService,private invent
         // add Product info in Stock Purchase Information
         // Add the Stock Purchase
      this.inventorymgtService
-    .addData(`https://localhost:7270/api/StockInventory/CreateNewSale`,this.stockSale ).subscribe({
+    .addData(`/api/StockInventory/CreateNewSale`,this.stockSale ).subscribe({
      next: (data: ApiResponse) => {
        console.log(data.result,data.message);
        if(data.result){
